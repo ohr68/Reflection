@@ -118,7 +118,7 @@ static void ExecutarPlugins()
 
     foreach (var classe in classesDePlugin)
     {
-        var plugin = Activator.CreateInstance(classe, new object[] { "BoletosPorCedente.csv" });
+        var plugin = Activator.CreateInstance(classe);
 
         var metodoProcessar = classe.GetMethod("Processar");
         metodoProcessar?.Invoke(plugin, new object[] { boletos });
